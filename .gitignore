@@ -1,4 +1,4 @@
 *.log
-@eaDir/**
+/@eaDir/**
 .DS_Store
 __pycache__/
