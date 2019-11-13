@@ -34,10 +34,10 @@ def fGPSMessageVars() -> dict:
     """
         Return GPS Data specific variables
         Message example
-        {'rOriginLat': 48.858137, 'uptime': 260584.02, 'rGLONASSsattelitesUsed': 0, 'rStatusGPS': 'Location 3D Fix', 'hostname': 'raspberrypi', 'rOriginLon': 2.223179, 
-        'rGNSSSsattelitesUsed': '7', 'rDestinationLon': 2.223179, 'publish': {'publish': 3}, 'rAltitude': 59.488, 'rGNSSSsattelitesinView': '10', 
+        {'rOriginLat': xxx, 'uptime': 260584.02, 'rGLONASSsattelitesUsed': 0, 'rStatusGPS': 'Location 3D Fix', 'hostname': 'raspberrypi', 'rOriginLon': xxx, 
+        'rGNSSSsattelitesUsed': '7', 'rDestinationLon': xxx, 'publish': {'publish': 3}, 'rAltitude': xxx, 'rGNSSSsattelitesinView': '10', 
         'rDistance': {'cdistance': 0.01, 'units': 'Km', 'distance': 0.0}, 'rOriginTimeUTC': 20191013180849, 'msgid': '4366fe8409149a7312c77490b549747a', 'rUTC': 20191013180857, 
-        'rSpeed': 0.0, 'publicIPAddress': '86.245.112.216', 'rDestinationLat': 48.858137}
+        'rSpeed': 0.0, 'publicIPAddress': 'xxx', 'rDestinationLat': xxx}
     """
     variables = dict()
     # GPS Data Keys
