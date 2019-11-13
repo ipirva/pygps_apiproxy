@@ -1,0 +1,102 @@
+{
+  "name": "Track GPS",
+  "version": "1",
+  "description": "Track GPS",
+  "visibility": "PRIVATE",
+  "paths": {
+    "/": []
+  },
+  "resources": [],
+  "members": [
+    {
+      "source": "memory",
+      "sourceId": "admin",
+      "role": "PRIMARY_OWNER"
+    }
+  ],
+  "pages": [],
+  "plans": [
+    {
+      "id": "6ed5fef5-f7b2-4fc0-95fe-f5f7b20fc078",
+      "name": "Track GPS Plan - JWT",
+      "description": "Track GPS Plan - JWT",
+      "validation": "MANUAL",
+      "security": "JWT",
+      "securityDefinition": "{\"signature\":\"RSA_RS512\",\"publicKeyResolver\":\"GIVEN_KEY\",\"extractClaims\":true,\"propagateAuthHeader\":true,\"resolverParameter\":\"XXXXXXXXXX\"}",
+      "type": "API",
+      "status": "PUBLISHED",
+      "apis": [
+        "744e144b-226b-4170-8e14-4b226bf17049"
+      ],
+      "order": 1,
+      "characteristics": [],
+      "created_at": 1572174794313,
+      "updated_at": 1572198651454,
+      "published_at": 1572174798553,
+      "paths": {
+        "/": []
+      },
+      "excluded_groups": [],
+      "comment_required": false
+    }
+  ],
+  "path_mappings": [],
+  "proxy": {
+    "virtual_hosts": [
+      {
+        "path": "/track"
+      }
+    ],
+    "strip_context_path": false,
+    "preserve_host": false,
+    "logging": {
+      "mode": "CLIENT_PROXY",
+      "condition": "#request.headers['X-DEBUG'] == 'true'"
+    },
+    "groups": [
+      {
+        "name": "default-group",
+        "endpoints": [
+          {
+            "name": "default",
+            "target": "https://api-proxy.local.home.p2o.be/",
+            "weight": 1,
+            "backup": false,
+            "type": "HTTP",
+            "inherit": true
+          }
+        ],
+        "load_balancing": {
+          "type": "ROUND_ROBIN"
+        },
+        "services": {
+          "discovery": {
+            "enabled": false
+          }
+        },
+        "proxy": {
+          "enabled": false,
+          "host": "null",
+          "port": 0,
+          "type": "HTTP"
+        },
+        "http": {
+          "connectTimeout": 5000,
+          "idleTimeout": 60000,
+          "keepAlive": true,
+          "readTimeout": 10000,
+          "pipelining": true,
+          "maxConcurrentConnections": 100,
+          "useCompression": true,
+          "followRedirects": true,
+          "encodeURI": false
+        },
+        "ssl": {
+          "trustAll": false,
+          "hostnameVerifier": false
+        }
+      }
+    ]
+  },
+  "response_templates": {}
+}
