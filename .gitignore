@@ -1,0 +1,3 @@
+@eaDir/**
+*.log
+__pycache__/
